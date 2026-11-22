@@ -29,8 +29,6 @@ const GATE_CAPS = {
 } as const;
 
 function stageTree() {
-  // Start clean so a stale file from an earlier run can never leak in.
-  rmSync(outputDir, { recursive: true, force: true });
   mkdirSync(outputDir, { recursive: true });
   cpSync(join(repoRoot, 'game'), join(outputDir, 'game'), { recursive: true });
   const shots = join(repoRoot, 'screenshots');
