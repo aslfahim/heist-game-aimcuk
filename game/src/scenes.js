@@ -59,8 +59,8 @@ export function stageScene(state, name) {
   if (name === 'vault') {
     loadFloor(state, 0);
     state.phase = 'play';
-    state.thief.x = 1060;
-    state.thief.y = 480;
+    state.thief.x = 1000;
+    state.thief.y = 520;
     state.thief.angle = -Math.PI / 2;
     poseGuards(state, [[1010, 330], [520, 330], [220, 560]], [-Math.PI / 2, 0, Math.PI * 0.5]);
     poseCameras(state, [Math.PI * 0.6, Math.PI]);
@@ -76,6 +76,7 @@ export function stageScene(state, name) {
     loadFloor(state, 0);
     state.phase = 'getaway';
     state.score = 1450;
+    state.hasKeycard = true;
     state.lootTaken = new Set(['art1', 'watch', 'art2', 'safe', 'cash']);
     state.stats.spotted = 2;
     state.stats.toolsUsed = 1;

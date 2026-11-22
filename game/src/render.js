@@ -164,8 +164,7 @@ export function drawLoot(ctx, state, t) {
 
 // render.js (continued): the thief, elevator/exit, HUD and the end screens.
 
-import { FLOORS, VIEW_W, VIEW_H } from './levels.js';
-import { ALARM_MAX, lootValue, totalLootCount } from './engine.js';
+import { lootValue, totalLootCount } from './engine.js';
 
 export function drawThief(ctx, state, t) {
   const th = state.thief;
@@ -268,7 +267,7 @@ export function drawHud(ctx, state) {
   ctx.fillStyle = state.smokeLeft > 0 ? '#cdd6e4' : '#ccc';
   ctx.fillText('F SMOKE ' + (state.smokeLeft > 0 ? Math.ceil(state.smokeLeft) + 's' : '(−15)'), 700, VIEW_H - 14);
   ctx.fillStyle = '#888';
-  ctx.fillText('E interact · WASD/arrows move · glass hides nothing', 880, VIEW_H - 14);
+  ctx.fillText('E interact · WASD move · glass hides nothing', 880, VIEW_H - 14);
   // Transient message.
   if (state.message && state.time < state.messageUntil) {
     ctx.fillStyle = 'rgba(5,8,20,0.9)';
